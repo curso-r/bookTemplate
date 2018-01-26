@@ -14,7 +14,6 @@ be in the docs folder
 }
 \examples{
 \dontrun{
-dir.create("exampleBook")
-bookTemplate::setup_book("myNewBook")
+bookTemplate::setup_book()
 }
 }
