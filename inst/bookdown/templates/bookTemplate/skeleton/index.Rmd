@@ -1,0 +1,39 @@
+---
+title: "Book"
+author: ""
+date: "`r format(Sys.Date(), '%d de %B de %Y')`"
+knit: "bookdown::render_book"
+documentclass: report
+bibliography: [bibliography/book.bib, bibliography/packages.bib]
+biblio-style: apalike
+link-citations: yes
+fontsize: '12pt'
+colorlinks: yes 
+lot: yes
+lof: yes
+site: bookdown::bookdown_site
+description: "Template"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, 
+                      message = FALSE, 
+                      comment = FALSE, 
+                      warning = FALSE, 
+                      fig.height = 5, 
+                      fig.width = 9)
+#options(knitr.table.format = 'markdown')
+```
+
+# Introduction {#introducao-2}
+
+Para que o seu `bookdown` funcione tanto na web quanto no pdf, você deve evitar usar marcadores que dependem do contexto.
+
+Para fazer citações você deve usar [@Weinstein1997] ou @Weinstein1997. Isso também funciona pra pacotes [@R-base] ou @R-base. Para criar uma figura, é preferível que você use o `print` padrão do `knitr`. A label do gráfico será `fig:label-do-chunk`. Você pode citar fazendo \@ref(fig:label-do-chunk).
+
+```{r label-do-chunk, fig.cap="Este é um gráfico."}
+plot(1:10)
+```
+
+Outro tipo de referência interessante é a referência a subseções. Você pode usar [essa sintaxe][objetivos] pra ir pra seção de objetivos. Você também pode usar \@ref(objetivos).
+ 
