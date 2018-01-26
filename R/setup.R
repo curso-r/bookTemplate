@@ -9,8 +9,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' dir.create("exampleBook")
-#' bookTemplate::setup_book("myNewBook")
+#' bookTemplate::setup_book()
 #' }
 setup_book <- function() {
   main_folder <- find_folder(template = 'bookTemplate', folder = '')
@@ -20,10 +19,7 @@ setup_book <- function() {
 
   copy2root <- main_folder %>%
     dir(full.names = TRUE, recursive = TRUE) %>%
-    grepl(pattern = "skeleton|travis", value = TRUE)
-
-    stringr::str_subset(pattern = ) %>%
-    c(folders)
+    grep(pattern = "skeleton|travis", value = TRUE)
 
   file.remove(dir(".", pattern = "\\.Rproj$"))
   invisible(file.copy(copy2root, to = ".", recursive = TRUE))
